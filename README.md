@@ -46,3 +46,10 @@
 - Photo does not leave the browser or persist in the encrypted vault; nutrition entry remains manual; AI recognition is NOT claimed.
 - JPEG/PNG/WEBP up to 8 MB. Never use this experimental branch for actual private medical records.
 - Branch: `development/v526-food-camera`; preserves `main` and all older baselines.
+
+## V527 experimental intelligence branch (separate, not live)
+- **Food AI**: explicit opt-in to the browser's built-in image-capable LanguageModel, only if supported. No remote AI service, no CDN model scripts, no photo upload. Unsupported browsers show an honest fallback. Image labels require manual validation and manual nutritional quantities.
+- **Metabolism**: adult-only Mifflin-St Jeor BMR estimate, activity factor, optional illustrative energy adjustment for goals. Measurement inputs are encrypted with the existing V525 vault. These are estimates, not real metabolic-rate measurements or medical targets.
+- **Motivational video**: 30-second canvas animation based on actually logged food and activity. Browser MediaRecorder may export WebM; Safari support varies. Not AI video generation, facial animation or synthetic exercise demonstrations.
+- No health record, facial picture, or private data is sent to an external model. Browser-provided model APIs and export still require independent privacy/security verification.
+- This branch is **not deployed**. Test with dummy data only. V525 main, V524, V522 and V1 remain untouched.
