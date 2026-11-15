@@ -45,7 +45,7 @@ if(!vault)throw Error('Unlock your vault first');
 if(fid==='food-form')await add('foods',{name:val('food-name').trim(),meal:val('food-meal'),calories:Number(val('food-cal')),protein:Number(val('food-pro')),carbs:Number(val('food-carb')),fat:Number(val('food-fat'))});
 else if(fid==='activity-form')await add('activities',{kind:val('act-kind'),minutes:Number(val('act-min')),note:val('act-note').trim()});
 else if(fid==='checkin-form')await add('checkins',{mood:val('check-mood'),note:val('check-note').trim()});
-else if(fid==='profile-form'){vault.profile={name:val('p-name').trim(),goal:val('p-goal')};await save();render();toast('Encrypted profile saved')}
+else if(fid==='profile-form'){vault.profile={...vault.profile,name:val('p-name').trim(),goal:val('p-goal')};await save();render();toast('Encrypted profile saved')}
 else if(fid==='medical-form'){let file=$('#med-file-input').files?.[0];let data=null;if(file){if(file.size>MAX_DOC)throw Error('Document exceeds 2 MB size limit');if(!['application/pdf','image/png','image/jpeg','image/webp'].includes(file.type))throw Error('Only PDF, PNG, JPEG or WEBP allowed');let bytes=new Uint8Array(await file.arrayBuffer());data=bytesToB64(bytes)}await add('records',{title:val('med-title').trim(),kind:val('med-kind'),note:val('med-note').trim(),filename:file?.name||'',mime:file?.type||'',data});}
 }catch(err){toast(err.message||'Unable to save data');render()}finally{if(btn&&btn.isConnected)btn.disabled=false}}
 function download(name,data,mime){let blob=new Blob([data],{type:mime}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),60000)}
