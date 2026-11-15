@@ -53,3 +53,13 @@
 - **Motivational video**: 30-second canvas animation based on actually logged food and activity. Browser MediaRecorder may export WebM; Safari support varies. Not AI video generation, facial animation or synthetic exercise demonstrations.
 - No health record, facial picture, or private data is sent to an external model. Browser-provided model APIs and export still require independent privacy/security verification.
 - This branch is **not deployed**. Test with dummy data only. V525 main, V524, V522 and V1 remain untouched.
+
+## V528 Universal Integrated Web Edition (experimental development)
+- Separate branch `development/v528-universal`; all existing stable branches and live websites remain untouched.
+- Encrypted universal profile preferences: preferred activity schedule, eating preference, activity days, session duration, personal priorities. These settings are stored in the existing V525 encrypted local vault, not an external server.
+- Food-planning dashboard: summarizes today's logged calories, protein and food entries and gives a general goal-aligned food habit suggestion. No invented analysis, automatic food nutrient retrieval or individual clinical advice.
+- Gym-planning dashboard: actual activity minutes, preferred routine and weekly exercise frequency; planned activity is never counted as completed.
+- Unified daily report: combines actual recorded meals, exercise, water, seven-day exercise days and most recent mood, plus an achievable wellness focus. Missing records remain unknown rather than being assumed zero consumption.
+- Retains earlier V527 conditional on-device food image recognition, adult predictive metabolic equation and local 30-second canvas motivational animation.
+- No external AI inference, account signup, multi-device sync, medical diagnosis, clinical validation, synthetic selfie video or real 561-food research library in this branch.
+- Static syntax checks only; browser/integration tests and a security assessment are still required. Use dummy data.
