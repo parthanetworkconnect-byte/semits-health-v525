@@ -40,3 +40,9 @@
 ## Preserved projects
 - **V522**: no files or settings modified.
 - **Live V1**: existing repo and demo unchanged; separate deployment path.
+
+## V526 food camera development branch (not deployed)
+- Adds a mobile camera/photo chooser with in-memory preview and clear-photo action to Food Intelligence.
+- Photo does not leave the browser or persist in the encrypted vault; nutrition entry remains manual; AI recognition is NOT claimed.
+- JPEG/PNG/WEBP up to 8 MB. Never use this experimental branch for actual private medical records.
+- Branch: `development/v526-food-camera`; preserves `main` and all older baselines.
